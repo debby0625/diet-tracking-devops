@@ -16,6 +16,7 @@ This repository demonstrates a DevOps workflow that automatically updates README
 
 Recent repository activity will be automatically updated here.
 
+<!-- ACTIVITY-END -->
 
 ## Automation
 
