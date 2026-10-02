@@ -39,7 +39,7 @@ jobs:
           if start >= end:
               raise SystemExit("README activity markers are in the wrong order.")
 
-            result = subprocess.run(
+                      result = subprocess.run(
               [
                   "git", "log",
                   "--pretty=format:%h%x09%s",
@@ -64,7 +64,6 @@ jobs:
                   break
 
           activity = "\n".join(commits)
-
           new_section = (
               f"{start_marker}\n\n"
               "### Latest Commits\n\n"
