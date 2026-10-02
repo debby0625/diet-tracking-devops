@@ -1,5 +1,8 @@
 # Diet Tracking DevOps
 
+[![Update README Activity](https://github.com/debby0625/diet-tracking-devops/actions/workflows/update-readme.yml/badge.svg)](https://github.com/debby0625/diet-tracking-devops/actions/workflows/update-readme.yml)
+[![Validate README Markers](https://github.com/debby0625/diet-tracking-devops/actions/workflows/validate-readme.yml/badge.svg)](https://github.com/debby0625/diet-tracking-devops/actions/workflows/validate-readme.yml)
+
 This repository demonstrates a DevOps workflow that automatically updates README activity using GitHub Actions and integrates development work with Jira.
 
 ## Project Objectives
