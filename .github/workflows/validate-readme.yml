@@ -1,0 +1,54 @@
+name: Validate README Markers
+
+on:
+  pull_request:
+    paths:
+      - "README.md"
+      - ".github/workflows/validate-readme.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate README activity markers
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          readme = Path("README.md")
+          content = readme.read_text()
+
+          start_marker = "<!-- ACTIVITY-START -->"
+          end_marker = "<!-- ACTIVITY-END -->"
+
+          start_count = content.count(start_marker)
+          end_count = content.count(end_marker)
+
+          if start_count != 1:
+              raise SystemExit(
+                  f"Validation failed: expected exactly 1 ACTIVITY-START marker, found {start_count}."
+              )
+
+          if end_count != 1:
+              raise SystemExit(
+                  f"Validation failed: expected exactly 1 ACTIVITY-END marker, found {end_count}."
+              )
+
+          if content.index(start_marker) > content.index(end_marker):
+              raise SystemExit(
+                  "Validation failed: ACTIVITY-START must appear before ACTIVITY-END."
+              )
+
+          print("README marker validation passed.")
+          print("ACTIVITY-START: 1")
+          print("ACTIVITY-END: 1")
+          print("Marker order: valid")
+          PY
