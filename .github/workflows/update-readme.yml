@@ -37,21 +37,26 @@ jobs:
               raise SystemExit("README activity markers are missing.")
 
           result = subprocess.run(
-              ["git", "log", "-5", "--pretty=format:- %h — %s"],
-              capture_output=True,
-              text=True,
-              check=True
+            [
+                "git", "log",
+                "--pretty=format:- %h - %s",
+                "--grep=chore: update README activity",
+                "--invert-grep",
+                "-5"
+            ],
+            capture_output=True,
+            text=True,
+            check=True
           )
 
           activity = result.stdout.strip()
 
           new_section = (
-              f"{start_marker}\n\n"
-              "### Latest Commits\n\n"
-              f"{activity}\n\n"
-              f"{end_marker}"
+            f"{start_marker}\n\n"
+            "### Latest Commits\n\n"
+            f"{activity}\n\n"
+            f"{end_marker}"
           )
-
           before = content.index(start_marker)
           after = content.index(end_marker) + len(end_marker)
 
