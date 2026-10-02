@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_TOKEN }}
+          fetch-depth: 0
 
       - name: Update recent activity
         run: |
@@ -31,19 +32,23 @@ jobs:
           end_marker = "<!-- ACTIVITY-END -->"
 
           if content.count(start_marker) != 1 or content.count(end_marker) != 1:
-              raise SystemExit("README must contain exactly one pair of activity markers.")
+              raise SystemExit(
+                  "README must contain exactly one pair of activity markers."
+              )
 
           start = content.index(start_marker)
           end = content.index(end_marker)
 
           if start >= end:
-              raise SystemExit("README activity markers are in the wrong order.")
+              raise SystemExit(
+                  "README activity markers are in the wrong order."
+              )
 
-                      result = subprocess.run(
+          result = subprocess.run(
               [
-                  "git", "log",
-                  "--pretty=format:%h%x09%s",
-                  "--all"
+                  "git",
+                  "log",
+                  "--pretty=format:%h%x09%s"
               ],
               capture_output=True,
               text=True,
@@ -53,6 +58,9 @@ jobs:
           commits = []
 
           for line in result.stdout.splitlines():
+              if "\t" not in line:
+                  continue
+
               sha, message = line.split("\t", 1)
 
               if "chore: update README activity" in message:
@@ -64,6 +72,7 @@ jobs:
                   break
 
           activity = "\n".join(commits)
+
           new_section = (
               f"{start_marker}\n\n"
               "### Latest Commits\n\n"
@@ -80,7 +89,7 @@ jobs:
               readme.write_text(updated)
               print("README activity updated.")
           PY
-          
+
       - name: Commit README if changed
         run: |
           if git diff --quiet README.md; then
