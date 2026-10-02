@@ -16,7 +16,7 @@ This repository demonstrates a DevOps workflow that automatically updates README
 
 ### Latest Commits
 
-- 81838e1 - Merge pull request #1 from debby0625/DTA-27-update-readme
+
 
 <!-- ACTIVITY-END -->
 
