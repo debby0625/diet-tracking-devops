@@ -39,20 +39,31 @@ jobs:
           if start >= end:
               raise SystemExit("README activity markers are in the wrong order.")
 
-          result = subprocess.run(
+            result = subprocess.run(
               [
                   "git", "log",
-                  "--pretty=format:- %h - %s",
-                  "--grep=chore: update README activity",
-                  "--invert-grep",
-                  "-5"
+                  "--pretty=format:%h%x09%s",
+                  "--all"
               ],
               capture_output=True,
               text=True,
               check=True
           )
 
-          activity = result.stdout.strip()
+          commits = []
+
+          for line in result.stdout.splitlines():
+              sha, message = line.split("\t", 1)
+
+              if "chore: update README activity" in message:
+                  continue
+
+              commits.append(f"- {sha} - {message}")
+
+              if len(commits) == 5:
+                  break
+
+          activity = "\n".join(commits)
 
           new_section = (
               f"{start_marker}\n\n"
