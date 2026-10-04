@@ -1,0 +1,91 @@
+name: README Activity Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  preview-readme:
+    name: Preview README Activity
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout pull request
+        uses: actions/checkout@v4
+
+      - name: Generate README activity preview
+        run: |
+          python3 <<'PY'
+          import subprocess
+          from pathlib import Path
+
+          readme = Path("README.md")
+          content = readme.read_text()
+
+          start_marker = "<!-- ACTIVITY-START -->"
+          end_marker = "<!-- ACTIVITY-END -->"
+
+          # Validate markers before generating the preview
+          if content.count(start_marker) != 1 or content.count(end_marker) != 1:
+              raise SystemExit(
+                  "Preview failed: README must contain exactly one pair of activity markers."
+              )
+
+          start = content.index(start_marker)
+          end = content.index(end_marker)
+
+          if start >= end:
+              raise SystemExit(
+                  "Preview failed: README activity markers are in the wrong order."
+              )
+
+          # Read repository history
+          log = subprocess.check_output(
+              ["git", "log", "--pretty=format:%h|%s"],
+              text=True
+          )
+
+          commits = []
+
+          for line in log.splitlines():
+              sha, subject = line.split("|", 1)
+
+              # Ignore commits created by the README updater itself
+              if "chore: update README activity" in subject.lower():
+                  continue
+
+              commits.append(f"- `{sha}` - {subject}")
+
+              if len(commits) == 5:
+                  break
+
+          activity = "\n".join(commits)
+
+          preview = (
+              f"{start_marker}\n\n"
+              "### Latest Commits\n\n"
+              f"{activity}\n\n"
+              f"{end_marker}"
+          )
+
+          print("")
+          print("========================================")
+          print("README ACTIVITY PREVIEW")
+          print("========================================")
+          print(preview)
+          print("========================================")
+          print("")
+          print("Preview completed successfully.")
+          print("No README file was modified or pushed.")
+          PY
+
+      - name: Add preview to workflow summary
+        run: |
+          echo "## README Activity Preview" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "The pull request passed the README activity preview check." >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "This preview is read-only. No changes were committed or pushed." >> "$GITHUB_STEP_SUMMARY"
