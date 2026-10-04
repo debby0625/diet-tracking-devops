@@ -1,0 +1,307 @@
+name: Multi-Repo Activity Aggregation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 0 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  aggregate-activity:
+    name: Aggregate Multi-Repo Activity
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Aggregate repository activity
+        env:
+          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          python3 <<'PY'
+          import json
+          import os
+          import time
+          import urllib.error
+          import urllib.request
+          from datetime import datetime
+          from pathlib import Path
+
+          repositories = [
+              "debby0625/diet-tracking-devops",
+              "debby0625/diet-tracking-app",
+              "debby0625/fitness-tracking-app",
+          ]
+
+          token = os.environ["GH_TOKEN"]
+
+          cache_dir = Path(".cache")
+          cache_dir.mkdir(exist_ok=True)
+
+          max_attempts = 4
+          base_delay = 1
+
+          def github_request(url):
+              for attempt in range(1, max_attempts + 1):
+                  try:
+                      print(f"API request attempt {attempt}/{max_attempts}")
+
+                      request = urllib.request.Request(
+                          url,
+                          headers={
+                              "Authorization": f"Bearer {token}",
+                              "Accept": "application/vnd.github+json",
+                              "X-GitHub-Api-Version": "2022-11-28",
+                              "User-Agent": "diet-tracking-devops-aggregator",
+                          },
+                      )
+
+                      with urllib.request.urlopen(request) as response:
+                          remaining = response.headers.get(
+                              "X-RateLimit-Remaining", "unknown"
+                          )
+                          limit = response.headers.get(
+                              "X-RateLimit-Limit", "unknown"
+                          )
+
+                          print(
+                              f"GitHub API rate limit: "
+                              f"{remaining}/{limit} remaining"
+                          )
+
+                          return json.loads(
+                              response.read().decode()
+                          )
+
+                  except urllib.error.HTTPError as error:
+                      if error.code in (403, 429):
+                          if attempt == max_attempts:
+                              raise
+
+                          delay = base_delay * (2 ** (attempt - 1))
+
+                          print(
+                              f"Rate limit detected: HTTP {error.code}"
+                          )
+                          print(
+                              f"Waiting {delay} second(s) before retry..."
+                          )
+
+                          time.sleep(delay)
+
+                          print("Retrying request...")
+                      else:
+                          raise
+
+              raise RuntimeError(
+                  "GitHub API request failed after all retries."
+              )
+
+          all_activity = []
+
+          for repo in repositories:
+              print("")
+              print(f"Fetching activity from {repo}...")
+
+              url = (
+                  f"https://api.github.com/repos/"
+                  f"{repo}/commits?per_page=5"
+              )
+
+              try:
+                  commits = github_request(url)
+
+                  cache_data = {
+                      "repository": repo,
+                      "fetched_at": datetime.utcnow().isoformat() + "Z",
+                      "commits": commits,
+                  }
+
+                  cache_file = (
+                      cache_dir /
+                      f"{repo.replace('/', '_')}.json"
+                  )
+
+                  cache_file.write_text(
+                      json.dumps(
+                          cache_data,
+                          indent=2,
+                          ensure_ascii=False,
+                      )
+                  )
+
+                  print(f"JSON cache saved: {cache_file}")
+
+              except Exception as error:
+                  cache_file = (
+                      cache_dir /
+                      f"{repo.replace('/', '_')}.json"
+                  )
+
+                  if cache_file.exists():
+                      print(
+                          f"API request failed for {repo}. "
+                          "Using cached JSON data."
+                      )
+
+                      cache_data = json.loads(
+                          cache_file.read_text()
+                      )
+
+                      commits = cache_data["commits"]
+
+                  else:
+                      print(
+                          f"No cache available for {repo}: {error}"
+                      )
+                      continue
+
+              for commit in commits[:5]:
+                  commit_data = commit["commit"]
+
+                  message = (
+                      commit_data["message"]
+                      .splitlines()[0]
+                  )
+
+                  # Exclude automatic README update commits
+                  if (
+                      "chore: update README activity"
+                      in message.lower()
+                  ):
+                      continue
+
+                  all_activity.append(
+                      {
+                          "repository": repo,
+                          "sha": commit["sha"][:7],
+                          "message": message,
+                          "date": commit_data["author"]["date"],
+                      }
+                  )
+
+          all_activity.sort(
+              key=lambda item: item["date"],
+              reverse=True,
+          )
+
+          latest_activity = all_activity[:10]
+
+          print("")
+          print("========================================")
+          print("MULTI-REPO ACTIVITY AGGREGATION")
+          print("========================================")
+
+          for item in latest_activity:
+              print(
+                  f"{item['repository']} | "
+                  f"{item['sha']} | "
+                  f"{item['message']}"
+              )
+
+          readme = Path("README.md")
+          content = readme.read_text()
+
+          start_marker = "<!-- ACTIVITY-START -->"
+          end_marker = "<!-- ACTIVITY-END -->"
+
+          if (
+              content.count(start_marker) != 1
+              or content.count(end_marker) != 1
+          ):
+              raise SystemExit(
+                  "README must contain exactly one pair "
+                  "of activity markers."
+              )
+
+          start = content.index(start_marker)
+          end = content.index(end_marker)
+
+          if start >= end:
+              raise SystemExit(
+                  "README activity markers are in the wrong order."
+              )
+
+          activity_lines = []
+
+          for item in latest_activity:
+              repo_name = item["repository"].split("/")[-1]
+
+              activity_lines.append(
+                  f"- **{repo_name}** — "
+                  f"`{item['sha']}` — "
+                  f"{item['message']}"
+              )
+
+          activity = "\n".join(activity_lines)
+
+          new_section = (
+              f"{start_marker}\n\n"
+              "### Latest Activity Across Repositories\n\n"
+              f"{activity}\n\n"
+              f"{end_marker}"
+          )
+
+          after = end + len(end_marker)
+
+          updated = (
+              content[:start]
+              + new_section
+              + content[after:]
+          )
+
+          if updated == content:
+              print("")
+              print(
+                  "README multi-repo activity is already up to date."
+              )
+          else:
+              readme.write_text(updated)
+
+              print("")
+              print(
+                  "README updated with aggregated "
+                  "multi-repository activity."
+              )
+
+          print("")
+          print(
+              f"Aggregated {len(latest_activity)} activities "
+              f"from {len(repositories)} repositories."
+          )
+          PY
+
+      - name: Show JSON cache files
+        run: |
+          echo "JSON cache files:"
+          ls -lh .cache
+
+          echo ""
+          echo "Cached repositories:"
+          for file in .cache/*.json; do
+            echo "- $file"
+          done
+
+      - name: Commit README and cache if changed
+        run: |
+          if git diff --quiet README.md .cache; then
+            echo "README and JSON cache are already up to date."
+            echo "No commit required."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md .cache
+
+          git commit -m \
+            "DTA-27 chore: aggregate multi-repo activity"
+
+          git push
