@@ -1,0 +1,103 @@
+name: GitHub API Rate Limit Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      simulate_rate_limit:
+        description: "Simulate rate limit to test exponential backoff"
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  rate-limit-test:
+    name: Test Rate Limit Handling
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Test GitHub API with retry and backoff
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SIMULATE_RATE_LIMIT: ${{ inputs.simulate_rate_limit }}
+        run: |
+          python3 <<'PY'
+          import json
+          import os
+          import time
+          import urllib.error
+          import urllib.request
+
+          token = os.environ["GH_TOKEN"]
+          simulate = os.environ.get("SIMULATE_RATE_LIMIT", "false").lower() == "true"
+
+          url = "https://api.github.com/repos/${{ github.repository }}"
+          max_attempts = 4
+          base_delay = 1
+
+          def github_request():
+              request = urllib.request.Request(
+                  url,
+                  headers={
+                      "Authorization": f"Bearer {token}",
+                      "Accept": "application/vnd.github+json",
+                      "X-GitHub-Api-Version": "2022-11-28",
+                      "User-Agent": "diet-tracking-devops-rate-limit-test",
+                  },
+              )
+
+              with urllib.request.urlopen(request) as response:
+                  remaining = response.headers.get("X-RateLimit-Remaining", "unknown")
+                  limit = response.headers.get("X-RateLimit-Limit", "unknown")
+
+                  print(f"GitHub API rate limit: {remaining}/{limit} remaining")
+
+                  return json.loads(response.read().decode())
+
+          for attempt in range(1, max_attempts + 1):
+              try:
+                  print(f"API request attempt {attempt}/{max_attempts}")
+
+                  # Test mode safely simulates rate limiting on the first
+                  # two attempts without consuming the real API quota.
+                  if simulate and attempt <= 2:
+                      print("Rate limit detected (simulated HTTP 429).")
+                      raise urllib.error.HTTPError(
+                          url,
+                          429,
+                          "Too Many Requests",
+                          hdrs=None,
+                          fp=None,
+                      )
+
+                  data = github_request()
+
+                  print(f"Request succeeded on attempt {attempt}.")
+                  print(f"Repository: {data['full_name']}")
+                  print("Rate limit handling test completed successfully.")
+                  break
+
+              except urllib.error.HTTPError as error:
+                  if error.code in (403, 429):
+                      if attempt == max_attempts:
+                          raise SystemExit(
+                              "Maximum retry attempts reached. Request failed."
+                          )
+
+                      delay = base_delay * (2 ** (attempt - 1))
+
+                      print(f"Rate limit response received: HTTP {error.code}")
+                      print(f"Waiting {delay} second(s) before retry...")
+                      time.sleep(delay)
+                      print("Retrying request...")
+                  else:
+                      raise
+
+          else:
+              raise SystemExit("GitHub API request failed.")
+          PY
