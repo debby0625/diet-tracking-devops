@@ -17,13 +17,18 @@ This repository demonstrates a DevOps workflow that automatically updates README
 
 <!-- ACTIVITY-START -->
 
-### Latest Commits
+### Latest Activity Across Repositories
 
-- ad10a98 - DTA-27 docs: add workflow status badges
-- 4b13136 - DTA-27 fix: rebuild README update workflow
-- 3490885 - DTA-27 fix: correct workflow indentation
-- 0816929 - DTA-27 fix: ensure README update is idempotent
-- 0cc702c - DTA-27 fix: ensure README update is idempotent
+- **diet-tracking-devops** — `554202b` — DTA-27 feat: add multi-repo activity aggregation
+- **diet-tracking-devops** — `054b3d3` — DTA-27 feat: add GitHub API rate limit handling test
+- **diet-tracking-devops** — `86b34d6` — Merge pull request #2 from debby0625/DTA-27-readme-preview
+- **diet-tracking-devops** — `03a4ba1` — Add README activity preview workflowDTA-27 feat: add pull request README preview
+- **diet-tracking-devops** — `a4ef76d` — DTA-27 chore: update README activity
+- **diet-tracking-app** — `1de2caa` — Merge pull request #1 from debby0625/DTA-13-build-meal-entry-form
+- **diet-tracking-app** — `d909ce7` — DTA-17: Implement daily calorie total calculation
+- **diet-tracking-app** — `dcc232c` — DTA-13: Add meal entry form UI
+- **diet-tracking-app** — `97b37b4` — Initial commit
+- **fitness-tracking-app** — `110bc78` — SCRUM-31 Fix workout history update issue
 
 <!-- ACTIVITY-END -->
 

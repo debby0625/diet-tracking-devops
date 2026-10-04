@@ -1,0 +1,164 @@
+{
+  "repository": "debby0625/fitness-tracking-app",
+  "fetched_at": "2026-10-04T11:42:43.315759Z",
+  "commits": [
+    {
+      "sha": "110bc78dc861c6d9a8e8c9f79887f9774b08caf2",
+      "node_id": "C_kwDOUiSg79oAKDExMGJjNzhkYzg2MWM2ZDlhOGU4YzlmNzk4ODdmOTc3NGIwOGNhZjI",
+      "commit": {
+        "author": {
+          "name": "debby0625",
+          "email": "2015.a3480285@gmail.com",
+          "date": "2026-09-20T08:57:44Z"
+        },
+        "committer": {
+          "name": "GitHub",
+          "email": "noreply@github.com",
+          "date": "2026-09-20T08:57:44Z"
+        },
+        "message": "SCRUM-31 Fix workout history update issue\n\nUpdated the workout history logic to display newly saved records immediately.",
+        "tree": {
+          "sha": "5627e109a4257416041258149bf9f7594a2de6c0",
+          "url": "https://api.github.com/repos/debby0625/fitness-tracking-app/git/trees/5627e109a4257416041258149bf9f7594a2de6c0"
+        },
+        "url": "https://api.github.com/repos/debby0625/fitness-tracking-app/git/commits/110bc78dc861c6d9a8e8c9f79887f9774b08caf2",
+        "comment_count": 0,
+        "verification": {
+          "verified": true,
+          "reason": "valid",
+          "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqr6AICRC1aQ7uu5UhlAAAvrEQAHw4StbTeBlNaFFZYoLHzUf0\nU1IdB7n7SDxXy6/a8gGzunab7jeQf6VHQgnBPdSUQ61SZ0gJMROxhOqr0Ls+8Rkd\n0X1MSvcDU7sdpuGVHKnSXa3mSJLIYbFv3xbW92jDEA7eBLqgxeJLcjAYVDNd2P0i\nlQgg7djLIl/5/y+TRv8jKOpRIm2IorbHhsLnFB6wZnXQZRBsWQqoGeKc7n9eTxXv\nOZAdHITKM/34EbVNCB09D+skhzem1ZM9pmZ9t8jfuZxsOhS7abCGRt/AALEP9jYm\nx1AHyKCYHBVgSYHRN57opGKAbcLShHL9lhPf9IHnHHcwKxWkj0VpVKS3k94VxNXz\nkxrZ6LV3VdP0uQAkzV6tFv+9DZ1B4f1CRAEr4zoUJeJEDkGq6YUxcS9Dqc9JpbHd\n0yyoq5t3So5ccCeKwDGzxxZ+WaenGoODs0bJ9CdwASFR34VAVfXLYjzt9BeYk7w6\npPQQp5WlZ3yknjPNnOTmuCWw3tvkyzecTR6Ks042bPQQcL0Ii7math6mnPcZkmPw\n/1RoVI11RfnbFTXqwmHn7+ewy+3E6N6d2zZQmAhjyO2mtHEv+/7TUO5tlee+KdZm\nLt33hD4ItvprgNofKGO4OUsWV4Qf/d3R+0oL1wHyl7PbYi2dFTOxM+cG95Vn42tN\nxxr3VhHHdvczkoexrhG2\n=qIVk\n-----END PGP SIGNATURE-----\n",
+          "payload": "tree 5627e109a4257416041258149bf9f7594a2de6c0\nparent 0a3dfa04fdf84284de9ce5b9af9e442c32f3d430\nauthor debby0625 <2015.a3480285@gmail.com> 1789894664 +0800\ncommitter GitHub <noreply@github.com> 1789894664 +0800\n\nSCRUM-31 Fix workout history update issue\n\nUpdated the workout history logic to display newly saved records immediately.",
+          "verified_at": "2026-09-20T08:57:44Z"
+        }
+      },
+      "url": "https://api.github.com/repos/debby0625/fitness-tracking-app/commits/110bc78dc861c6d9a8e8c9f79887f9774b08caf2",
+      "html_url": "https://github.com/debby0625/fitness-tracking-app/commit/110bc78dc861c6d9a8e8c9f79887f9774b08caf2",
+      "comments_url": "https://api.github.com/repos/debby0625/fitness-tracking-app/commits/110bc78dc861c6d9a8e8c9f79887f9774b08caf2/comments",
+      "author": {
+        "login": "debby0625",
+        "id": 230414851,
+        "node_id": "U_kgDODbvaAw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/230414851?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/debby0625",
+        "html_url": "https://github.com/debby0625",
+        "followers_url": "https://api.github.com/users/debby0625/followers",
+        "following_url": "https://api.github.com/users/debby0625/following{/other_user}",
+        "gists_url": "https://api.github.com/users/debby0625/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/debby0625/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/debby0625/subscriptions",
+        "organizations_url": "https://api.github.com/users/debby0625/orgs",
+        "repos_url": "https://api.github.com/users/debby0625/repos",
+        "events_url": "https://api.github.com/users/debby0625/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/debby0625/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "web-flow",
+        "id": 19864447,
+        "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+        "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/web-flow",
+        "html_url": "https://github.com/web-flow",
+        "followers_url": "https://api.github.com/users/web-flow/followers",
+        "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+        "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+        "organizations_url": "https://api.github.com/users/web-flow/orgs",
+        "repos_url": "https://api.github.com/users/web-flow/repos",
+        "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/web-flow/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "0a3dfa04fdf84284de9ce5b9af9e442c32f3d430",
+          "url": "https://api.github.com/repos/debby0625/fitness-tracking-app/commits/0a3dfa04fdf84284de9ce5b9af9e442c32f3d430",
+          "html_url": "https://github.com/debby0625/fitness-tracking-app/commit/0a3dfa04fdf84284de9ce5b9af9e442c32f3d430"
+        }
+      ]
+    },
+    {
+      "sha": "0a3dfa04fdf84284de9ce5b9af9e442c32f3d430",
+      "node_id": "C_kwDOUiSg79oAKDBhM2RmYTA0ZmRmODQyODRkZTljZTViOWFmOWU0NDJjMzJmM2Q0MzA",
+      "commit": {
+        "author": {
+          "name": "debby0625",
+          "email": "2015.a3480285@gmail.com",
+          "date": "2026-09-20T08:52:40Z"
+        },
+        "committer": {
+          "name": "GitHub",
+          "email": "noreply@github.com",
+          "date": "2026-09-20T08:52:40Z"
+        },
+        "message": "Initial commit",
+        "tree": {
+          "sha": "9f329700771a5aa3098119b1e4c9bbe7add1c97f",
+          "url": "https://api.github.com/repos/debby0625/fitness-tracking-app/git/trees/9f329700771a5aa3098119b1e4c9bbe7add1c97f"
+        },
+        "url": "https://api.github.com/repos/debby0625/fitness-tracking-app/git/commits/0a3dfa04fdf84284de9ce5b9af9e442c32f3d430",
+        "comment_count": 0,
+        "verification": {
+          "verified": true,
+          "reason": "valid",
+          "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqr57YCRC1aQ7uu5UhlAAAf04QAF9JnRJW8R4speITIJYUVwtc\nmTANLKtgDrNjqqylOWht+K2oFUvNJ1bfrbbNSzUg0VmFn0OwJbY5Z/WZlzkzAf7W\nxEgTaiJ0YPx6iMcZ+RGI1/sCrWJVCVGGIdHR4VRHPcgpgnu+1JxJ6VheZbJbOIvA\nxWTpyLFGXsMkUhweY8rF4HUS8JDTkFOW7KXevzdrudqRcA9eWduwdvDgESEEFc85\nA3TZ0g1yUnmmVIi5rR9iH/1eJ+H76pVPGUY7RylcSGJ5G64CtsvKzroCmCR8nt0F\n/hcDxb27HF1SzlaOx8nND5Jq22cglVZTdNne3kadpbqtf/iUIK+ydhQX5vdUYl6i\n9SlgHNeYyifR9nOlyizOgKdXpV5ZSA6IdgNvM6KnahVm2dMStMnnr4lRqpLZEOZj\nSBvmC4HJNEZetr0YWGW/OJQegDbXuX1mxU/Reg3awwZ3TjB0ErMdL+4PMrQyP/C3\nN+QGbBEkH2oLeq0vsyOtTs/o2zh6VKhfOnkULcV/IL+y7Ma9ZNT1uPaQClJ401fF\ncRxswXbmjdYNm1BRWQxedAtL+v/JRWBdWSnNrHhfT/zb29X283GScZTlIiwBrrTI\ndbc0qDO5Js9lMfx7T2/d66tAillC2qtiXebdDHi1bozoKHiniuetiOOxwojTZbGO\n0xmy0tav+3LvxTQH/3Dx\n=WXE/\n-----END PGP SIGNATURE-----\n",
+          "payload": "tree 9f329700771a5aa3098119b1e4c9bbe7add1c97f\nauthor debby0625 <2015.a3480285@gmail.com> 1789894360 +0800\ncommitter GitHub <noreply@github.com> 1789894360 +0800\n\nInitial commit",
+          "verified_at": "2026-09-20T08:52:41Z"
+        }
+      },
+      "url": "https://api.github.com/repos/debby0625/fitness-tracking-app/commits/0a3dfa04fdf84284de9ce5b9af9e442c32f3d430",
+      "html_url": "https://github.com/debby0625/fitness-tracking-app/commit/0a3dfa04fdf84284de9ce5b9af9e442c32f3d430",
+      "comments_url": "https://api.github.com/repos/debby0625/fitness-tracking-app/commits/0a3dfa04fdf84284de9ce5b9af9e442c32f3d430/comments",
+      "author": {
+        "login": "debby0625",
+        "id": 230414851,
+        "node_id": "U_kgDODbvaAw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/230414851?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/debby0625",
+        "html_url": "https://github.com/debby0625",
+        "followers_url": "https://api.github.com/users/debby0625/followers",
+        "following_url": "https://api.github.com/users/debby0625/following{/other_user}",
+        "gists_url": "https://api.github.com/users/debby0625/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/debby0625/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/debby0625/subscriptions",
+        "organizations_url": "https://api.github.com/users/debby0625/orgs",
+        "repos_url": "https://api.github.com/users/debby0625/repos",
+        "events_url": "https://api.github.com/users/debby0625/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/debby0625/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "web-flow",
+        "id": 19864447,
+        "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+        "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/web-flow",
+        "html_url": "https://github.com/web-flow",
+        "followers_url": "https://api.github.com/users/web-flow/followers",
+        "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+        "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+        "organizations_url": "https://api.github.com/users/web-flow/orgs",
+        "repos_url": "https://api.github.com/users/web-flow/repos",
+        "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/web-flow/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": []
+    }
+  ]
+}
