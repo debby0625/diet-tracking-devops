@@ -1,7 +1,171 @@
 {
   "repository": "debby0625/diet-tracking-devops",
-  "fetched_at": "2026-10-06T06:38:04.774231Z",
+  "fetched_at": "2026-10-07T06:14:53.718142Z",
   "commits": [
+    {
+      "sha": "40af241db268e35fcbacae888042f6280ce8348e",
+      "node_id": "C_kwDOU2uDQtoAKDQwYWYyNDFkYjI2OGUzNWZjYmFjYWU4ODgwNDJmNjI4MGNlODM0OGU",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "email": "41898282+github-actions[bot]@users.noreply.github.com",
+          "date": "2026-10-07T05:06:58Z"
+        },
+        "committer": {
+          "name": "github-actions[bot]",
+          "email": "41898282+github-actions[bot]@users.noreply.github.com",
+          "date": "2026-10-07T05:06:58Z"
+        },
+        "message": "DTA-27 chore: update README activity",
+        "tree": {
+          "sha": "e6c086bfc98a5739432b1c4e5d168597f6ea562b",
+          "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/git/trees/e6c086bfc98a5739432b1c4e5d168597f6ea562b"
+        },
+        "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/git/commits/40af241db268e35fcbacae888042f6280ce8348e",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/40af241db268e35fcbacae888042f6280ce8348e",
+      "html_url": "https://github.com/debby0625/diet-tracking-devops/commit/40af241db268e35fcbacae888042f6280ce8348e",
+      "comments_url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/40af241db268e35fcbacae888042f6280ce8348e/comments",
+      "author": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "node_id": "MDM6Qm90NDE4OTgyODI=",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+        "html_url": "https://github.com/apps/github-actions",
+        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+        "type": "Bot",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "node_id": "MDM6Qm90NDE4OTgyODI=",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+        "html_url": "https://github.com/apps/github-actions",
+        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+        "type": "Bot",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "eadf3d5c321a925e725b62cdd99162a2ba03e584",
+          "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/eadf3d5c321a925e725b62cdd99162a2ba03e584",
+          "html_url": "https://github.com/debby0625/diet-tracking-devops/commit/eadf3d5c321a925e725b62cdd99162a2ba03e584"
+        }
+      ]
+    },
+    {
+      "sha": "eadf3d5c321a925e725b62cdd99162a2ba03e584",
+      "node_id": "C_kwDOU2uDQtoAKGVhZGYzZDVjMzIxYTkyNWU3MjViNjJjZGQ5OTE2MmEyYmEwM2U1ODQ",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "email": "41898282+github-actions[bot]@users.noreply.github.com",
+          "date": "2026-10-06T06:38:05Z"
+        },
+        "committer": {
+          "name": "github-actions[bot]",
+          "email": "41898282+github-actions[bot]@users.noreply.github.com",
+          "date": "2026-10-06T06:38:05Z"
+        },
+        "message": "DTA-27 chore: aggregate multi-repo activity",
+        "tree": {
+          "sha": "47bf196bd5129436c401e2fe4b3f5f05b2145c89",
+          "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/git/trees/47bf196bd5129436c401e2fe4b3f5f05b2145c89"
+        },
+        "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/git/commits/eadf3d5c321a925e725b62cdd99162a2ba03e584",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/eadf3d5c321a925e725b62cdd99162a2ba03e584",
+      "html_url": "https://github.com/debby0625/diet-tracking-devops/commit/eadf3d5c321a925e725b62cdd99162a2ba03e584",
+      "comments_url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/eadf3d5c321a925e725b62cdd99162a2ba03e584/comments",
+      "author": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "node_id": "MDM6Qm90NDE4OTgyODI=",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+        "html_url": "https://github.com/apps/github-actions",
+        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+        "type": "Bot",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "node_id": "MDM6Qm90NDE4OTgyODI=",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+        "html_url": "https://github.com/apps/github-actions",
+        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+        "type": "Bot",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "0db55954fb0ed3ea244689d35b9980d6f48f321f",
+          "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/0db55954fb0ed3ea244689d35b9980d6f48f321f",
+          "html_url": "https://github.com/debby0625/diet-tracking-devops/commit/0db55954fb0ed3ea244689d35b9980d6f48f321f"
+        }
+      ]
+    },
     {
       "sha": "0db55954fb0ed3ea244689d35b9980d6f48f321f",
       "node_id": "C_kwDOU2uDQtoAKDBkYjU1OTU0ZmIwZWQzZWEyNDQ2ODlkMzViOTk4MGQ2ZjQ4ZjMyMWY",
@@ -245,170 +409,6 @@
           "sha": "e6f4012a3cdcced2cfd46445ae8d30003766878d",
           "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/e6f4012a3cdcced2cfd46445ae8d30003766878d",
           "html_url": "https://github.com/debby0625/diet-tracking-devops/commit/e6f4012a3cdcced2cfd46445ae8d30003766878d"
-        }
-      ]
-    },
-    {
-      "sha": "e6f4012a3cdcced2cfd46445ae8d30003766878d",
-      "node_id": "C_kwDOU2uDQtoAKGU2ZjQwMTJhM2NkY2NlZDJjZmQ0NjQ0NWFlOGQzMDAwMzc2Njg3OGQ",
-      "commit": {
-        "author": {
-          "name": "github-actions[bot]",
-          "email": "41898282+github-actions[bot]@users.noreply.github.com",
-          "date": "2026-10-04T11:42:43Z"
-        },
-        "committer": {
-          "name": "github-actions[bot]",
-          "email": "41898282+github-actions[bot]@users.noreply.github.com",
-          "date": "2026-10-04T11:42:43Z"
-        },
-        "message": "DTA-27 chore: aggregate multi-repo activity",
-        "tree": {
-          "sha": "b984b248a71bae21e1911ee8df71af202c7c1c88",
-          "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/git/trees/b984b248a71bae21e1911ee8df71af202c7c1c88"
-        },
-        "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/git/commits/e6f4012a3cdcced2cfd46445ae8d30003766878d",
-        "comment_count": 0,
-        "verification": {
-          "verified": false,
-          "reason": "unsigned",
-          "signature": null,
-          "payload": null,
-          "verified_at": null
-        }
-      },
-      "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/e6f4012a3cdcced2cfd46445ae8d30003766878d",
-      "html_url": "https://github.com/debby0625/diet-tracking-devops/commit/e6f4012a3cdcced2cfd46445ae8d30003766878d",
-      "comments_url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/e6f4012a3cdcced2cfd46445ae8d30003766878d/comments",
-      "author": {
-        "login": "github-actions[bot]",
-        "id": 41898282,
-        "node_id": "MDM6Qm90NDE4OTgyODI=",
-        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
-        "html_url": "https://github.com/apps/github-actions",
-        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
-        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
-        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
-        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
-        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
-        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
-        "type": "Bot",
-        "user_view_type": "public",
-        "site_admin": false
-      },
-      "committer": {
-        "login": "github-actions[bot]",
-        "id": 41898282,
-        "node_id": "MDM6Qm90NDE4OTgyODI=",
-        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
-        "html_url": "https://github.com/apps/github-actions",
-        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
-        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
-        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
-        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
-        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
-        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
-        "type": "Bot",
-        "user_view_type": "public",
-        "site_admin": false
-      },
-      "parents": [
-        {
-          "sha": "554202bdc341b539bf4f59c5d9ed1364058151be",
-          "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/554202bdc341b539bf4f59c5d9ed1364058151be",
-          "html_url": "https://github.com/debby0625/diet-tracking-devops/commit/554202bdc341b539bf4f59c5d9ed1364058151be"
-        }
-      ]
-    },
-    {
-      "sha": "554202bdc341b539bf4f59c5d9ed1364058151be",
-      "node_id": "C_kwDOU2uDQtoAKDU1NDIwMmJkYzM0MWI1MzliZjRmNTljNWQ5ZWQxMzY0MDU4MTUxYmU",
-      "commit": {
-        "author": {
-          "name": "蔡逸盈",
-          "email": "2015.a3480285@gmail.com",
-          "date": "2026-10-04T11:42:10Z"
-        },
-        "committer": {
-          "name": "GitHub",
-          "email": "noreply@github.com",
-          "date": "2026-10-04T11:42:10Z"
-        },
-        "message": "DTA-27 feat: add multi-repo activity aggregation",
-        "tree": {
-          "sha": "3493e46b5c5162d6e172ad7a6554eeafaab6a138",
-          "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/git/trees/3493e46b5c5162d6e172ad7a6554eeafaab6a138"
-        },
-        "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/git/commits/554202bdc341b539bf4f59c5d9ed1364058151be",
-        "comment_count": 0,
-        "verification": {
-          "verified": true,
-          "reason": "valid",
-          "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqwjuSCRC1aQ7uu5UhlAAAgtAQAB0ISMc+cM/L+jtugAWfciO0\nsPHvQO2K8d4SeXrSLc5pMS/q2N5BkynhxL1xn8sF+B3/gyjsNBDWwPG4jzIUxzts\nN5IrGTT4FIpCBnkG9Lzrz/zGrdEQEIb6sz4NkMKBb+cBWbjQMxQokECjiXynvbmU\n9WwEKqo6wfSVJFDkaIJfbHiaJ0TntmV0zlftomETFqumLuFvnS+s98YPLrV4Tcik\nJGWEMz1+o1JYbFG1SYYj7lskBHWWLFPyB1sEjPeCi5EG6N/Nfqqo06J87GFhZMBM\nB7EvuiMpzrH1fH4AxXrRZxaS10wXwF26abq39ak9L+jDNETZuReqidzcfkS5U+bJ\n4aZW8MEhgPMToTxXuxfdNhtCIIF2NVAP4apvo8U+iKt5fcSi26ObWEdZIz5ByUQa\nLJRid29500KfkgGAJZswkqRtu1fNiasyfR4xCUghRcBuoSPXb3ROEoyV0F2GNKrR\nNYjFDBVeU3iOWPzdo3ARB83aW2fpZK1D93Cm+8jqqWYvmkAVQHhbFMQDcHkwZ8lE\nImKgBv8f5xsrgzWJi/k44Voxg+aCtawX8Vq6J9zL0o15VMmjp51k2feEW5G2rkiv\nmIHCtl3bHOGbKxZqfclX5gD3OPe0YjXX5jlMjFpHA1er/ce7PFQR9cQiD7uGEgAR\nby0lSh51VUOft0HSZKhV\n=d7ZN\n-----END PGP SIGNATURE-----\n",
-          "payload": "tree 3493e46b5c5162d6e172ad7a6554eeafaab6a138\nparent 054b3d3908c97b2b385d2e59a0204f09efcc78a4\nauthor 蔡逸盈 <2015.a3480285@gmail.com> 1791114130 +0800\ncommitter GitHub <noreply@github.com> 1791114130 +0800\n\nDTA-27 feat: add multi-repo activity aggregation",
-          "verified_at": "2026-10-04T11:42:11Z"
-        }
-      },
-      "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/554202bdc341b539bf4f59c5d9ed1364058151be",
-      "html_url": "https://github.com/debby0625/diet-tracking-devops/commit/554202bdc341b539bf4f59c5d9ed1364058151be",
-      "comments_url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/554202bdc341b539bf4f59c5d9ed1364058151be/comments",
-      "author": {
-        "login": "debby0625",
-        "id": 230414851,
-        "node_id": "U_kgDODbvaAw",
-        "avatar_url": "https://avatars.githubusercontent.com/u/230414851?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/debby0625",
-        "html_url": "https://github.com/debby0625",
-        "followers_url": "https://api.github.com/users/debby0625/followers",
-        "following_url": "https://api.github.com/users/debby0625/following{/other_user}",
-        "gists_url": "https://api.github.com/users/debby0625/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/debby0625/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/debby0625/subscriptions",
-        "organizations_url": "https://api.github.com/users/debby0625/orgs",
-        "repos_url": "https://api.github.com/users/debby0625/repos",
-        "events_url": "https://api.github.com/users/debby0625/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/debby0625/received_events",
-        "type": "User",
-        "user_view_type": "public",
-        "site_admin": false
-      },
-      "committer": {
-        "login": "web-flow",
-        "id": 19864447,
-        "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-        "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/web-flow",
-        "html_url": "https://github.com/web-flow",
-        "followers_url": "https://api.github.com/users/web-flow/followers",
-        "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-        "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-        "organizations_url": "https://api.github.com/users/web-flow/orgs",
-        "repos_url": "https://api.github.com/users/web-flow/repos",
-        "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/web-flow/received_events",
-        "type": "User",
-        "user_view_type": "public",
-        "site_admin": false
-      },
-      "parents": [
-        {
-          "sha": "054b3d3908c97b2b385d2e59a0204f09efcc78a4",
-          "url": "https://api.github.com/repos/debby0625/diet-tracking-devops/commits/054b3d3908c97b2b385d2e59a0204f09efcc78a4",
-          "html_url": "https://github.com/debby0625/diet-tracking-devops/commit/054b3d3908c97b2b385d2e59a0204f09efcc78a4"
         }
       ]
     }
